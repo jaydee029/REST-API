@@ -1,8 +1,1 @@
-[
-    {
-      "id": 1,
-      "name": "Hou",
-      "email": "hou@mail.com",
-      "password": "$2b$10$u2r3EK7.p4l9bzQd74nGNepvIHw5gF84j4Dy6/kJmtNR4OC.A5t5O"
-    }
-  ]
+[{"id":1,"name":"Hou","email":"hou@mail.com","password":"$2b$10$u2r3EK7.p4l9bzQd74nGNepvIHw5gF84j4Dy6/kJmtNR4OC.A5t5O"},{"id":2,"email":"fucku@gmail.com","name":"fuck","password":"$2b$10$hKQyXxzHiRc81S7LI/1rOeSymd3jl./RDqYf8QEiD1IUzZwN.MITS"},{"id":3,"email":"fucku2@gmail.com","name":"fuck me","password":"$2b$10$KJbELoiDKr2/EG2q/L3QS.WSjGD40hQ0NNnD8hmfefUmsb6T62ECi"}]

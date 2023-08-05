@@ -7,15 +7,15 @@ const { writeFile } = require("fs")
 
 //create functionalities such as authenticating a user , creating a new user , finding a user
 const { JWT_SECRET }=process.env
-const userFilePath=path.join(__dirname,"../../db/user,js")
+const userFilePath=path.join(__dirname,"../../db/users.json")
 
 
 const findUser=async({id , email})=>{
     const users=JSON.parse(await fs.readFile(userFilePath))
-    users.find((user)=>{
+    return users.find((user)=>
         user.id===parseInt(id) || user.email===email
-    })
-
+    )
+}
 const authenticate=async({id,email,password})=>{
     const user=find({email})
 
@@ -33,7 +33,7 @@ const create=async({name, email ,password})=>{
     const users=JSON.parse(await fs.readFile(userFilePath))
 
     const newUser={
-        id:length(users)+1,
+        id:users.length+1,
         email,
         name,
         
@@ -52,10 +52,8 @@ const create=async({name, email ,password})=>{
 }
 
 
-
 module.exports={
     findUser,
     create,
     authenticate
-}
 }

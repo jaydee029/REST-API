@@ -1,5 +1,5 @@
 const express=require("express")
-const path=require("path")
+const auth=require("./middleware/auth")
 const recipesrouter=require("./router/recipes.js")
 const usersrouter=require("./router/users.js")
 const app=express()

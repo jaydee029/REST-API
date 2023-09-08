@@ -4,6 +4,7 @@ const recipesrouter=require("./router/recipes.js")
 const usersrouter=require("./router/users.js")
 const app=express()
 const cors= require("cors")
+const path=require("path")
 
 app.use(cors())
 
@@ -15,8 +16,11 @@ app.use((req,res,next)=>{
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.redirect("/api/src/recipes");
+const publicdir=path.join(__dirname,"./public");
+app.use(express.static(publicdir));
+
+app.get("/:id", (req, res) => {
+    res.redirect(`/api/src/recipes/${req.params.id}`);
 });
 
 app.use('/api/src/recipes',recipesrouter)

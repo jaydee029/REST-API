@@ -7,9 +7,9 @@ const getRecipes=async()=>JSON.parse(await fs.readFile(recipesfilepath))
 
 const get =async(id)=>{
     const recipes =await getRecipes()
-    return recipes.find((recipe)=>{
+    return recipes.find((recipe)=>
         recipe.id===parseInt(id)
-    })
+    )
 }
 
 const save=async(recipe)=>{

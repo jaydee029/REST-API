@@ -4,7 +4,7 @@ const recipeExists=async(req,res,next)=>{
     const recipe=await services.get(req.params.id)
 
     if(recipe===undefined){
-        const error= new Error("Recipe not found")
+        const error= new Error(`Recipe not found ${req.params.id}`)
         error.statuscode=404
         next(error)
     }else{
